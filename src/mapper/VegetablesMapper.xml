@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mapper.VegegtablesMapper">
+<mapper namespace="mapper.VegetablesMapper">
 	    
 	<!-- 查询商品信息 -->
 	<select id="selectList" parameterType="pojo.queryVo.VegetablesQueryVo" resultType="pojo.custom.VegetablesCustom">

@@ -19,7 +19,7 @@ public class UserController {
 	@Autowired
 	private UserServiceImpl userServiceImpl;
 	
-	@RequestMapping("-list")
+	@RequestMapping("-list.action")
 	public ModelAndView select() throws Exception {
 		
 		List<UserCustom> userList = userServiceImpl.selectList(null);

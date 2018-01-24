@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.UserMapper">
+	
+	<!-- sql片段 -->
+	<!-- 根据Id查询 -->
+	<sql id="query_user_where">
+		<if test="UserCuston!=null">
+			<if test="UserCuston.id!=null and UserCuston.id!=''">
+				and id like '%${UserCuston.id}%'
+			</if>
+		</if>
+	</sql>
+	    
+	<!-- 查询商品信息 -->
+	<select id="selectList" parameterType="pojo.queryVo.UserQueryVo" resultType="pojo.custom.UserCustom">
+		select * from user
+		<where>
+			<include refid="query_user_where"/>
+		</where>
+	</select>
+	
+
+</mapper>
